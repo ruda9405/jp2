@@ -53,6 +53,22 @@
       box-shadow: 0 -2px 16px rgba(6,199,85,0.12);
       height: 70px; padding: 0; display: flex; align-items: center; justify-content: center;
       touch-action: manipulation;
+      animation: floatingPulse 1.5s infinite;
+    }
+    @keyframes floatingPulse {
+      0%,100% { box-shadow: 0 0 16px 0 #06C755; }
+      50% { box-shadow: 0 0 32px 8px #06C755; }
+    }
+    .floating-line a {
+      animation: btnBounce 1.2s infinite;
+      transition: transform 0.2s;
+    }
+    @keyframes btnBounce {
+      0%,100% { transform: scale(1); }
+      20% { transform: scale(1.08); }
+      40% { transform: scale(0.98); }
+      60% { transform: scale(1.05); }
+      80% { transform: scale(0.97); }
     }
     .magazine-section {
       background: #fff; border-radius: 2rem; box-shadow: 0 2px 24px rgba(255,152,0,0.08);
@@ -99,10 +115,36 @@
         LINEで「7」と返信してください。すぐに学習資料をお送りします。
       </div>
     </section>
+    <div class="stock-copy w-full text-base text-gray-800 bg-white rounded-xl shadow-lg p-5 mb-5 text-center leading-relaxed">
+      <h2 class="text-xl font-bold text-green-600 mb-3">株式投資で未来を変える第一歩を、今ここから。</h2>
+      <p class="mb-3">日本の株式市場は、世界でも有数の規模と歴史を誇り、日々多くの企業が成長と挑戦を続けています。株式投資は、企業の成長を応援しながら、ご自身の資産形成にも役立つ魅力的な選択肢です。</p>
+      <p class="mb-3">初心者の方には「株って何？」「どうやって始めるの？」という疑問が多いかもしれません。経験者の方も「今の市場動向は？」「リスク管理のコツは？」など、常に新しい情報や知識が求められます。</p>
+      <p class="mb-3">本ページでは、<span class="font-bold text-green-700">株式投資の基礎知識から最新トレンド、実践的な運用ポイント</span>まで、幅広い内容を分かりやすくまとめた無料学習資料をLINEで配布しています。<br>「7」と返信するだけで、すぐに受け取れます。</p>
+      <p class="mb-3">資料内容例：</p>
+      <ul class="list-disc list-inside text-left mx-auto max-w-xs mb-3 text-gray-700">
+        <li>株式投資の基本用語・仕組み</li>
+        <li>証券口座の開設方法と注意点</li>
+        <li>日本市場の特徴と主要な業種</li>
+        <li>初心者が失敗しないためのポイント</li>
+        <li>経験者向けの最新市場分析・トレンド</li>
+        <li>リスク管理と資産運用のコツ</li>
+        <li>よくある質問と実践アドバイス</li>
+        <li>株価チャートの見方・分析の基礎</li>
+        <li>長期投資・短期売買の考え方</li>
+        <li>分散投資・ポートフォリオ構築のヒント</li>
+      </ul>
+      <p class="mb-3">株式投資は、経済や社会の動きと密接に関わっています。例えば、企業の決算発表や新製品のリリース、世界的な経済ニュースなどが株価に影響を与えることもあります。<br>資料では、こうした市場の動きや情報収集のコツも丁寧に解説しています。</p>
+      <p class="mb-3">「投資は難しそう…」「もっと効率よく学びたい」「今のやり方で合っているか不安」<br>そんな方こそ、ぜひLINEでご相談ください。<span class="font-bold text-green-700">あなたの疑問や悩みに、個別で丁寧にお答えします。</span></p>
+      <p class="mb-3">今すぐLINEで「7」と返信して、<span class="font-bold text-green-700">株式投資のスタートダッシュ</span>を切りましょう！<br>資料は完全無料・何度でもご相談OKです。<br>投資の世界は一人で悩むより、正しい知識と仲間のサポートが大切です。</p>
+      <p class="mb-3">株式投資はリスクもありますが、しっかり学び、計画的に取り組むことで、資産形成の大きな味方になります。<br>まずは無料資料で、あなたの投資力を一歩ずつ高めてみませんか？</p>
+      <p class="text-sm text-gray-500 mt-4">※本サービスは情報提供のみを目的としており、特定銘柄の推奨や投資助言は行いません。ご利用は自己責任でお願いいたします。</p>
+    </div>
   </main>
     <footer class="bg-gray-900 text-white py-6 mt-8 text-center text-xs">
       <div class="mb-2">
         <a href="#" id="privacy-link" class="hover:underline">プライバシーポリシー</a>
+        <span class="mx-2">|</span>
+        <a href="#" id="disclaimer-link" class="hover:underline">免責事項</a>
         <span class="mx-2">|</span>
         <a href="#" class="hover:underline">利用規約</a>
       </div>
@@ -128,6 +170,21 @@
         <p class="text-xs text-gray-500 mt-2">本ポリシーは概要です。詳細はアプリ内の正式なプライバシーポリシーをご確認ください。</p>
       </div>
     </div>
+    <!-- 免责声明弹窗内容补充 -->
+    <div id="disclaimer-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-xl shadow-lg max-w-lg w-full p-8 relative">
+        <button onclick="closeDisclaimerModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+        <h3 class="text-lg font-bold mb-2">免責事項</h3>
+        <p class="text-xs text-gray-500 mb-4">最終更新日: 2025年8月31日</p>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-gray-700">
+          <li>本ページは日本株式の基礎知識や学習資料を無料でご案内するものです。</li>
+          <li>初心者の方でも安心して学べる内容となっており、投資の判断はご自身の責任でお願いいたします。</li>
+          <li>資料は情報提供を目的としており、特定銘柄の推奨や投資助言は行いません。</li>
+          <li>ご不明点はLINEでお気軽にご相談ください。</li>
+        </ol>
+        <p class="text-xs text-gray-500 mt-4">本免責事項は概要です。詳細は運営者までお問い合わせください。</p>
+      </div>
+    </div>
     <div class="floating-line">
       <a href="https://lin.ee/VKvCIQE" target="_blank" class="w-full flex items-center justify-center gap-2 font-bold">
         <span>LINEで相談する (公式)</span>
@@ -140,12 +197,25 @@
       function closePrivacyModal() {
         document.getElementById('privacy-modal').classList.add('hidden');
       }
+      function openDisclaimerModal() {
+        document.getElementById('disclaimer-modal').classList.remove('hidden');
+      }
+      function closeDisclaimerModal() {
+        document.getElementById('disclaimer-modal').classList.add('hidden');
+      }
       document.addEventListener('DOMContentLoaded', function() {
         var privacyLink = document.getElementById('privacy-link');
         if (privacyLink) {
           privacyLink.addEventListener('click', function(e) {
             e.preventDefault();
             openPrivacyModal();
+          });
+        }
+        var disclaimerLink = document.getElementById('disclaimer-link');
+        if (disclaimerLink) {
+          disclaimerLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            openDisclaimerModal();
           });
         }
       });

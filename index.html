@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日本副業・夢を叶える新しい働き方</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Noto Sans JP', sans-serif; background: #F7F7FA; color: #222; }
+    .magazine-hero {
+      background: linear-gradient(120deg, #FFB6B9 0%, #FFD6E0 100%);
+      padding: 2.5rem 0 1.5rem 0;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+    .magazine-hero .star-avatar {
+      width: 110px; height: 110px; border-radius: 50%; box-shadow: 0 4px 24px rgba(255,152,0,0.18); object-fit: cover; border: 5px solid #fff; position: absolute; right: 2rem; top: 2rem;
+    }
+    .invite-highlight {
+      background: linear-gradient(90deg, #FF9800 0%, #FFD54F 100%);
+      color: #fff;
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 16px rgba(255,152,0,0.18);
+      padding: 1rem 2rem;
+      margin: 1.5rem 0;
+      display: inline-block;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(255,152,0,0.5); }
+      50% { box-shadow: 0 0 0 12px rgba(255,152,0,0); }
+    }
+    .copy-btn-vivid {
+      background-color: #FF9800;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 1rem;
+      padding: 0.7rem 2rem;
+      margin-left: 1rem;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 8px rgba(255,152,0,0.18);
+      transition: background 0.2s;
+    }
+    .copy-btn-vivid:active { background-color: #E68900; }
+    .floating-line {
+      position: fixed; left: 0; bottom: 0; width: 100%; z-index: 50;
+      background: #06C755; color: #fff; text-align: center; font-weight: bold; font-size: 1.15rem;
+      box-shadow: 0 -2px 16px rgba(6,199,85,0.12);
+      height: 70px; padding: 0; display: flex; align-items: center; justify-content: center;
+      touch-action: manipulation;
+    }
+    .magazine-section {
+      background: #fff; border-radius: 2rem; box-shadow: 0 2px 24px rgba(255,152,0,0.08);
+      margin: 2rem auto; padding: 2rem 1.2rem; max-width: 480px;
+    }
+    .magazine-title {
+      font-size: 2.2rem; font-weight: 900; color: #FF9800; margin-bottom: 1.2rem; text-align: center;
+    }
+    .magazine-feature {
+      display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.2rem;
+    }
+    .magazine-feature-icon {
+      font-size: 2.2rem; background: #FFF3E0; border-radius: 1rem; padding: 0.5rem 1rem;
+    }
+    .magazine-feature-text { font-weight: bold; color: #FF9800; font-size: 1.1rem; }
+    .magazine-comment {
+      background: #F7F7FA; border-radius: 1rem; box-shadow: 0 2px 12px rgba(255,152,0,0.08);
+      padding: 1.2rem; margin-bottom: 1.2rem; display: flex; align-items: flex-start;
+    }
+    .magazine-comment .star-avatar { width: 56px; height: 56px; margin: 0 1rem 0 0; }
+    .magazine-steps { display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; }
+    .magazine-step {
+      background: #FFF3E0; border-radius: 1rem; padding: 1rem 0.7rem; text-align: center; width: 100px; box-shadow: 0 2px 8px rgba(255,152,0,0.08);
+    }
+    .magazine-step-num { font-size: 2rem; color: #FF9800; font-weight: bold; }
+    @media (max-width: 640px) {
+      .magazine-hero .star-avatar { position: static; display: block; margin: 0 auto 1rem auto; }
+      .magazine-steps { flex-direction: column; gap: 0.7rem; }
+      .magazine-step { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="w-full" style="padding-bottom:70px;">
+    <section class="simple-stock-hero">
+      <img src="your-image.jpg" alt="学習資料イメージ" class="mx-auto mb-4 w-full max-w-xs rounded-xl shadow">
+      <h1 class="text-3xl font-extrabold text-gray-800 mb-4">日本株式学習資料<br>無料プレゼント</h1>
+      <p class="text-lg text-gray-700 mb-6">LINEで「7」と返信するだけで、<br>株式投資の入門資料をすぐに受け取れます。</p>
+      <a href="https://line.me/ti/p/nU_DuevWBV" target="_blank" class="line-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24"><path d="M22.4 0H1.6C.7 0 0 .7 0 1.6v20.8c0 .9.7 1.6 1.6 1.6h20.8c.9 0 1.6-.7 1.6-1.6V1.6c0-.9-.7-1.6-1.6-1.6zM7.8 18.5h-3V9.6h3v8.9zM6.3 8.4c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm11.9 10.1h-3v-4.4c0-1.1-.4-1.8-1.3-1.8-.7 0-1.2.5-1.4.9-.1.2-.1.4-.1.7v4.6h-3V9.6h3v1.3c.4-.6 1-1.4 2.7-1.4 2 0 3.4 1.3 3.4 4.1v4.9z"/></svg>
+        LINEで受け取る
+      </a>
+      <div class="tip-box">
+        <span>LINEで「7」と返信してください。<br>すぐに学習資料をお送りします。</span>
+      </div>
+    </section>
+  </main>
+    <footer class="bg-gray-900 text-white py-6 mt-8 text-center text-xs">
+      <div class="mb-2">
+        <a href="#" id="privacy-link" class="hover:underline">プライバシーポリシー</a>
+        <span class="mx-2">|</span>
+        <a href="#" class="hover:underline">利用規約</a>
+      </div>
+      <p>&copy; 2025 あなたのアプリ名。保留所有権利。</p>
+      <p class="mt-2 text-gray-400">本サービスは情報提供のみを目的としており、投資・雇用・法律等の助言を行うものではありません。ご利用は自己責任でお願いいたします。</p>
+    </footer>
+    <!-- 隐私政策弹窗 -->
+    <div id="privacy-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-xl shadow-lg max-w-lg w-full p-8 relative">
+        <button onclick="closePrivacyModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+        <h3 class="text-lg font-bold mb-2">プライバシーポリシー</h3>
+        <p class="text-xs text-gray-500 mb-4">最終更新日: 2025年8月30日</p>
+        <ol class="list-decimal list-inside space-y-2 text-sm text-gray-700">
+          <li><strong>収集する情報:</strong> 検索した企業名や案件名、利用状況データ、端末・ブラウザ情報等を取得する場合があります。</li>
+          <li><strong>情報の利用目的:</strong> サービスの提供・改善、利用傾向の分析、不正防止等に利用します。</li>
+          <li><strong>データ共有:</strong> 個人情報の販売は行いません。分析目的で匿名化・集計化したデータを第三者と共有する場合があります。</li>
+          <li><strong>Cookie等の利用:</strong> 利便性向上や利用状況分析のため、Cookie等の技術を使用します。</li>
+          <li><strong>データの安全管理:</strong> 適切な安全対策を講じますが、完全な安全は保証できません。</li>
+          <li><strong>第三者サービス:</strong> サービス内の外部リンク先は独自のプライバシーポリシーを有しています。</li>
+          <li><strong>未成年者のプライバシー:</strong> 本サービスは13歳未満を対象としていません。万一該当情報を取得した場合はご連絡ください。</li>
+        </ol>
+        <p class="text-xs text-gray-500 mt-4">お問い合わせ: support@example.com</p>
+        <p class="text-xs text-gray-500 mt-2">本ポリシーは概要です。詳細はアプリ内の正式なプライバシーポリシーをご確認ください。</p>
+      </div>
+    </div>
+    <div class="floating-line">
+      <a href="https://lin.ee/VKvCIQE" target="_blank" class="w-full flex items-center justify-center gap-2 font-bold">
+        <span>LINEで相談する (公式)</span>
+      </a>
+    </div>
+    <script>
+      function openPrivacyModal() {
+        document.getElementById('privacy-modal').classList.remove('hidden');
+      }
+      function closePrivacyModal() {
+        document.getElementById('privacy-modal').classList.add('hidden');
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        var privacyLink = document.getElementById('privacy-link');
+        if (privacyLink) {
+          privacyLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            openPrivacyModal();
+          });
+        }
+      });
+    </script>
+</body>
+</html>

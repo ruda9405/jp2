@@ -3,211 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>日本市場・学習交流コミュニティ</title>
+  <title>投資家の哲学と実績：公開情報まとめ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Noto Sans JP', sans-serif; background: #F7F7FA; color: #222; }
-    .magazine-hero {
-      background: linear-gradient(120deg, #FFB6B9 0%, #FFD6E0 100%);
-      padding: 2.5rem 0 1.5rem 0;
-      text-align: left;
-      position: relative;
-      overflow: hidden;
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #F7F7FA;
+      color: #222;
     }
-    .magazine-hero .star-avatar {
-      width: 110px; height: 110px; border-radius: 50%; box-shadow: 0 4px 24px rgba(255,152,0,0.18); object-fit: cover; border: 5px solid #fff; position: absolute; right: 2rem; top: 2rem;
+    main { padding-bottom: 70px; }
+ .hero-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
     }
-    .invite-highlight {
-      background: linear-gradient(90deg, #FF9800 0%, #FFD54F 100%);
-      color: #fff;
-      font-size: 2.2rem;
-      font-weight: 900;
-      letter-spacing: 0.18em;
-      border-radius: 1.2rem;
-      box-shadow: 0 2px 16px rgba(255,152,0,0.18);
-      padding: 1rem 2rem;
-      margin: 1.5rem 0;
-      display: inline-block;
-      animation: pulse 1.5s infinite;
+ .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 1rem;
+      border-left: 4px solid #4F80E2;
+      padding-left: 0.8rem;
     }
-    @keyframes pulse {
-      0%,100% { box-shadow: 0 0 0 0 rgba(255,152,0,0.5); }
-      50% { box-shadow: 0 0 0 12px rgba(255,152,0,0); }
-    }
-    .copy-btn-vivid {
-      background-color: #FF9800;
-      color: #fff;
-      font-weight: bold;
+ .feature-card {
+      background: #fff;
       border-radius: 1rem;
-      padding: 0.7rem 2rem;
-      margin-left: 1rem;
-      font-size: 1.1rem;
-      box-shadow: 0 2px 8px rgba(255,152,0,0.18);
-      transition: background 0.2s;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-    .copy-btn-vivid:active { background-color: #E68900; }
-    .floating-line {
-      position: fixed; left: 0; bottom: 0; width: 100%; z-index: 50;
-      background: #06C755; color: #fff; text-align: center; font-weight: bold; font-size: 1.15rem;
+ .line-btn-fixed {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 50;
+      background-color: #06C755;
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.25rem;
       box-shadow: 0 -2px 16px rgba(6,199,85,0.12);
-      height: 70px; padding: 0; display: flex; align-items: center; justify-content: center;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       touch-action: manipulation;
-      animation: floatingPulse 1.5s infinite;
     }
-    @keyframes floatingPulse {
-      0%,100% { box-shadow: 0 0 16px 0 #06C755; }
-      50% { box-shadow: 0 0 32px 8px #06C755; }
+ .line-btn-fixed a { animation: btnBounce 1.2s infinite; transition: transform 0.2s; }
+    @keyframes btnBounce { 0%, 100% { transform: scale(1); } 20% { transform: scale(1.08); } 40% { transform: scale(0.98); } 60% { transform: scale(1.05); } 80% { transform: scale(0.97); } }
+ .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
     }
-    .floating-line a {
-      animation: btnBounce 1.2s infinite;
-      transition: transform 0.2s;
+ .modal-content {
+      background-color: #fff;
+      margin: auto;
+      padding: 20px;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      position: relative;
     }
-    @keyframes btnBounce {
-      0%,100% { transform: scale(1); }
-      20% { transform: scale(1.08); }
-      40% { transform: scale(0.98); }
-      60% { transform: scale(1.05); }
-      80% { transform: scale(0.97); }
+ .modal-close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
     }
-    .magazine-section {
-      background: #fff; border-radius: 2rem; box-shadow: 0 2px 24px rgba(255,152,0,0.08);
-      margin: 2rem auto; padding: 2rem 1.2rem; max-width: 480px;
+ .modal-close:hover,.modal-close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
     }
-    .magazine-title {
-      font-size: 2.2rem; font-weight: 900; color: #FF9800; margin-bottom: 1.2rem; text-align: center;
-    }
-    .magazine-feature {
-      display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.2rem;
-    }
-    .magazine-feature-icon {
-      font-size: 2.2rem; background: #FFF3E0; border-radius: 1rem; padding: 0.5rem 1rem;
-    }
-    .magazine-feature-text { font-weight: bold; color: #FF9800; font-size: 1.1rem; }
-    .magazine-comment {
-      background: #F7F7FA; border-radius: 1rem; box-shadow: 0 2px 12px rgba(255,152,0,0.08);
-      padding: 1.2rem; margin-bottom: 1.2rem; display: flex; align-items: flex-start;
-    }
-    .magazine-comment .star-avatar { width: 56px; height: 56px; margin: 0 1rem 0 0; }
-    .magazine-steps { display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; }
-    .magazine-step {
-      background: #FFF3E0; border-radius: 1rem; padding: 1rem 0.7rem; text-align: center; width: 100px; box-shadow: 0 2px 8px rgba(255,152,0,0.08);
-    }
-    .magazine-step-num { font-size: 2rem; color: #FF9800; font-weight: bold; }
     @media (max-width: 640px) {
-      .magazine-hero .star-avatar { position: static; display: block; margin: 0 auto 1rem auto; }
-      .magazine-steps { flex-direction: column; gap: 0.7rem; }
-      .magazine-step { width: 100%; }
+   .hero-container { padding: 1.5rem 1rem; }
     }
   </style>
 </head>
 <body>
-  <main class="w-full" style="padding-bottom:70px;">
-    <section class="simple-stock-hero flex flex-col items-center justify-center bg-white rounded-xl shadow-lg max-w-md mx-auto p-6 mt-6">
-      <img src="https://raw.githubusercontent.com/ruda9405/jp2/main/photo_2025-08-11_21-04-31.jpg" alt="学習・交流イメージ" class="mb-5 w-full max-w-xs rounded-xl shadow">
-      <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-800 mb-3 text-center">日本市場の基礎知識シェア<br>学習交流コミュニティ</h1>
-      <p class="text-base sm:text-lg text-gray-700 mb-5 text-center">日本の経済や市場に興味がある方はぜひご参加ください。<br>LINEで「7」と返信するだけで、初心者向けの学習資料を受け取れます。みんなで一緒に交流・成長しましょう。</p>
-      <a href="https://line.me/ti/p/uKjVnGELuu" target="_blank" class="line-btn w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-bold text-white bg-green-500 hover:bg-green-600 transition mb-3">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24"><path d="M22.4 0H1.6C.7 0 0 .7 0 1.6v20.8c0 .9.7 1.6 1.6 1.6h20.8c.9 0 1.6-.7 1.6-1.6V1.6c0-.9-.7-1.6-1.6-1.6zM7.8 18.5h-3V9.6h3v8.9zM6.3 8.4c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm11.9 10.1h-3v-4.4c0-1.1-.4-1.8-1.3-1.8-.7 0-1.2.5-1.4.9-.1.2-.1.4-.1.7v4.6h-3V9.6h3v1.3c.4-.6 1-1.4 2.7-1.4 2 0 3.4 1.3 3.4 4.1v4.9z"/></svg>
-        今すぐLINEで参加
-      </a>
-      <div class="tip-box w-full text-center text-sm text-gray-600 bg-gray-100 rounded-lg py-2">
-        「7」と返信するだけで学習資料を受け取れます。仲間と一緒に交流しましょう。<br>本ページは学習・交流のみを目的としており、個人情報の収集や投資助言は行いません。
+  <main class="w-full mx-auto max-w-xl">
+    <section class="hero w-full">
+      <img src="https://raw.githubusercontent.com/ruda9405/jp2/main/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-05-30%20154935.png" alt="投資の成長を象徴する画像" class="hero-img">
+      <div class="p-6 text-center">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-800 mb-3 text-center">伝説の投資家が語る<br>成功の哲学と実績</h1>
+        <p class="text-base sm:text-lg text-gray-700 mb-5 text-center">本ページは、日本を代表する個人投資家テスタ氏の<br>公開情報のみをまとめた非公式サイトです。</p>
       </div>
     </section>
-    <div class="stock-copy w-full text-base text-gray-800 bg-white rounded-xl shadow-lg p-5 mb-5 text-center leading-relaxed">
-      <h2 class="text-xl font-bold text-green-600 mb-3">日本市場・経済の基礎を一緒に学ぼう</h2>
-      <p class="mb-3">このページは日本市場や経済について学びたい方のための交流・情報シェアを目的としています。初心者向けの内容で、基礎知識や用語、情報収集の方法などを分かりやすくまとめています。</p>
-      <p class="mb-3">資料内容例：</p>
-      <ul class="list-disc list-inside text-left mx-auto max-w-xs mb-3 text-gray-700">
-        <li>市場・経済の基礎知識</li>
-        <li>情報収集・学習のコツ</li>
-        <li>日本社会や市場の特徴</li>
-        <li>交流・成長のヒント</li>
-        <li>よくある質問と解説</li>
-      </ul>
-      <!-- 免責事項はポップアップでご確認ください -->
-    </div>
+
+    <section class="p-4">
+      <div class="space-y-6">
+        <div class="feature-card">
+          <h2 class="section-title">揺るぎない実績と投資哲学</h2>
+          <p class="text-gray-700">
+            テスタ氏は、2005年にわずか300万円の資金から株式投資を開始し、2024年2月には累計利益100億円を達成した、日本を代表する個人投資家です [1, 2]。この驚異的な実績の背後には、他人に依存せず、通过**彻底的学习和实践**来掌握投资策略的坚定信念。他的投资哲学是「投資はギャンブルではない」という強い信念（[22, 4]）に裏打ちされており、投资生涯中从未有年回报率为负的记录，即便是在经历过雷曼危机、东日本大地震和新冠危机等市场暴跌时，他依然能够持续获利 [22, 2, 3]。
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h2 class="section-title">哲学の変遷と成長への道</h2>
+          <p class="text-gray-700">
+            彼の投資スタイルは常に進化を続けています。当初はスキャルピング（超短期売買）やデイトレードに注力していましたが、市場環境の変化やアルゴリズム取引の台頭（[3, 4]）に合わせて、他人のブログを毎日300本読むなど徹底した学習と分析を行い、徐々に中長期投資へと軸足を移しました。如今，他的投资组合中已包含了高股息股票、美股和全球指数基金等多样化资产 [3, 4]。这种“変化力”（[3]）正是他能够持续在市场中生存和成功的关键，也是他向所有投资者传达的核心信息：**在不断变化的市场中，适应和学习是唯一的生存之道**。
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h2 class="section-title">社会貢献と信頼</h2>
+          <div class="space-y-4">
+            <img src="https://raw.githubusercontent.com/ruda9405/jp2/main/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-05-30%20154958.png" alt="寄付を象徴する画像" class="w-full rounded-md shadow-sm">
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+              <li>
+                **社会への還元:** 彼は2014年以降、持续向日本全国的儿童福利院捐款 [10, 11, 13]。这种持续的慈善活动，累计金额已超过2亿日元 [12]，赢得了社会的广泛共鸣，并赋予了他的品牌超越金钱的深刻人文魅力。他以实际行动证明，投资的成功不仅是个人的财富积累，更是回馈社会、帮助他人的有力手段。
+              </li>
+              <li>
+                **知識の普及:** 彼は『マンガでわかるテスタの株式投資』の監修を務め、将自己的知识和经验以易于理解的漫画形式分享给大众 [5, 6, 7, 8, 9]，致力于帮助更多的投资新手。他认为，投资不是一个人的战斗，而是通过社区交流、知识分享共同成长的过程 [1, 4]。
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <h2 class="section-title">メディア出演と出版物</h2>
+          <p class="text-gray-700">
+            テスタ氏は、多くのテレビ番組や雑誌に登場し、作为日本最具影响力的个人投资者之一，他的见解和故事广受关注。他曾担任《マンガでわかるテスタの株式投資》一书的监修人（[5]），该书旨在帮助投资新手掌握正确的股票投资方法。他的公开露面和出版物进一步证实了他的权威性和可信赖性，使其成为投资学习领域的重要参考人物。
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <h2 class="section-title">今すぐLINEで参加</h2>
+          <p class="text-gray-700 mb-4">
+            テスタ氏が提唱する「学びと継続」の哲学に共感した方は、こちらのコミュニティにご参加ください。<br>LINEで「7」と返信するだけで、初心者向け学習資料を受け取れます。
+          </p>
+          <a href="https://line.me/ti/p/uKjVnGELuu" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-bold text-white bg-green-500 hover:bg-green-600 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22.4 0H1.6C.7 0 0.7 0 1.6v20.8c0.9.7 1.6 1.6 1.6h20.8c.9 0 1.6-.7 1.6-1.6V1.6c0-.9-.7-1.6-1.6-1.6zM7.8 18.5h-3V9.6h3v8.9zM6.3 8.4c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm11.9 10.1h-3v-4.4c0-1.1-.4-1.8-1.3-1.8-.7 0-1.2.5-1.4.9-.1.2-.1.4-.1.7v4.6h-3V9.6h3v1.3c.4-.6 1-1.4 2.7-1.4 2 0 3.4 1.3 3.4 4.1v4.9z" />
+            </svg>
+            今すぐLINEで参加
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
-    <footer class="bg-gray-900 text-white py-6 mt-8 text-center text-xs">
-      <div class="mb-2">
-        <a href="#" id="privacy-link" class="hover:underline">プライバシーポリシー</a>
-        <span class="mx-2">|</span>
-        <a href="#" id="disclaimer-link" class="hover:underline">免責事項</a>
-        <span class="mx-2">|</span>
-        <a href="#" class="hover:underline">利用規約</a>
-      </div>
-      <p>&copy; 2025 日本市場学習交流コミュニティ。全ての権利を保有します。</p>
-      <p class="mt-2 text-gray-400">本サービスは情報提供・学習交流のみを目的としており、投資・雇用・法律等の助言は行いません。ご利用は自己責任でお願いいたします。</p>
-    </footer>
-    <!-- 隐私政策弹窗 -->
-    <div id="privacy-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-      <div class="bg-white rounded-xl shadow-lg max-w-lg w-full p-8 relative">
-        <button onclick="closePrivacyModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
-        <h3 class="text-lg font-bold mb-2">プライバシーポリシー</h3>
-        <p class="text-xs text-gray-500 mb-4">最終更新日: 2025年8月30日</p>
-        <ol class="list-decimal list-inside space-y-2 text-sm text-gray-700">
-          <li><strong>収集する情報:</strong> 検索した企業名や案件名、利用状況データ、端末・ブラウザ情報等を取得する場合があります。</li>
-          <li><strong>情報の利用目的:</strong> サービスの提供・改善、利用傾向の分析、不正防止等に利用します。</li>
-          <li><strong>データ共有:</strong> 個人情報の販売は行いません。分析目的で匿名化・集計化したデータを第三者と共有する場合があります。</li>
-          <li><strong>Cookie等の利用:</strong> 利便性向上や利用状況分析のため、Cookie等の技術を使用します。</li>
-          <li><strong>データの安全管理:</strong> 適切な安全対策を講じますが、完全な安全は保証できません。</li>
-          <li><strong>第三者サービス:</strong> サービス内の外部リンク先は独自のプライバシーポリシーを有しています。</li>
-          <li><strong>未成年者のプライバシー:</strong> 本サービスは13歳未満を対象としていません。万一該当情報を取得した場合はご連絡ください。</li>
-        </ol>
-        <p class="text-xs text-gray-500 mt-4">お問い合わせ: support@example.com</p>
-        <p class="text-xs text-gray-500 mt-2">本ポリシーは概要です。詳細はアプリ内の正式なプライバシーポリシーをご確認ください。</p>
-      </div>
+
+  <a href="https://line.me/ti/p/uKjVnGELuu" target="_blank" class="line-btn-fixed">
+    LINEで相談する (公式)
+  </a>
+
+  <div id="disclaimer-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeDisclaimerModal()">&times;</span>
+      <h3 class="text-xl font-bold mb-2">免責事項</h3>
+      <p class="text-sm text-gray-700 mb-4">
+        本ページは非公式サイトであり、テスタ氏の公開情報を引用し、学習コミュニティへの関心を喚起する目的で制作されたものです。当サイトは、テスタ氏ご本人またはその関係者からの**正式な許可や、協力関係を得て運営しているものではありません。**<br><br>
+        本ページは情報提供のみを目的としており、特定の投資や商品の推奨、投資助言、または金銭的な成功を保証するものではありません。投資判断はご自身の責任で行ってください。
+      </p>
     </div>
-    <!-- 免责声明弹窗内容补充 -->
-    <div id="disclaimer-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-      <div class="bg-white rounded-xl shadow-lg max-w-lg w-full p-8 relative">
-        <button onclick="closeDisclaimerModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
-        <h3 class="text-lg font-bold mb-2">免責事項</h3>
-        <p class="text-xs text-gray-500 mb-4">最終更新日: 2025年8月31日</p>
-        <ol class="list-decimal list-inside space-y-2 text-sm text-gray-700">
-          <li>本ページは日本市場の基礎知識や学習資料を無料でご案内するものです。</li>
-          <li>初心者の方でも安心して学べる内容となっており、投資の判断はご自身の責任でお願いいたします。</li>
-          <li>資料および本サービスは参考情報のみを目的としており、特定銘柄の推奨や投資助言は行いません。ご利用は自己責任でお願いいたします。</li>
-          <li>ご不明点はLINEでお気軽にご相談ください。</li>
-        </ol>
-        <p class="text-xs text-gray-500 mt-4">本免責事項は概要です。詳細は運営者までお問い合わせください。</p>
-      </div>
-    </div>
-    <div class="floating-line">
-      <a href="https://line.me/ti/p/uKjVnGELuu" target="_blank" class="w-full flex items-center justify-center gap-2 font-bold">
-        <span>LINEで相談する (公式)</span>
-      </a>
-    </div>
-    <script>
-      function openPrivacyModal() {
-        document.getElementById('privacy-modal').classList.remove('hidden');
-      }
-      function closePrivacyModal() {
-        document.getElementById('privacy-modal').classList.add('hidden');
-      }
-      function openDisclaimerModal() {
-        document.getElementById('disclaimer-modal').classList.remove('hidden');
-      }
-      function closeDisclaimerModal() {
-        document.getElementById('disclaimer-modal').classList.add('hidden');
-      }
-      document.addEventListener('DOMContentLoaded', function() {
-        var privacyLink = document.getElementById('privacy-link');
-        if (privacyLink) {
-          privacyLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            openPrivacyModal();
-          });
-        }
-        var disclaimerLink = document.getElementById('disclaimer-link');
-        if (disclaimerLink) {
-          disclaimerLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            openDisclaimerModal();
-          });
-        }
-      });
-    </script>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.getElementById('disclaimer-modal').style.display = 'flex';
+      }, 1000); 
+    });
+    function closeDisclaimerModal() {
+      document.getElementById('disclaimer-modal').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
